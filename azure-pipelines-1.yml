@@ -4,9 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
- targetDirectory: 'C:\Users\Priya\Delete'
- filePattern: '*.*'
+#variables:
+ #targetDirectory: 'C:\Users\Priya\Delete'
+# filePattern: '*.*'
 
 steps:
 - checkout: self
