@@ -3,7 +3,15 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-
+variables:
+- group: 'RecycleAppPool'
+- name: IIS Server
+  value: "xyz"
 steps:
-- script: echo Hello, world!
-  
+- task: IISWebAppManagementOnMachineGroup@0
+  inputs:
+    IISDeploymentType: 'IISApplicationPool'
+    ActionIISApplicationPool: 'RecycleAppPool'
+    StartStopRecycleAppPoolName: 'IVR-Services'
+
+ 
