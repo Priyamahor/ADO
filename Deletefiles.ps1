@@ -1,1 +1,1 @@
-Remove Item C:\Users\Priya\Delete\*.*
+echo "Priya"
