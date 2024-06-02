@@ -4,9 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-#variables:
- #targetDirectory: 'C:\Users\Priya\Delete'
-# filePattern: '*.*'
+variables:
+ targetDirectory: 'C:\Users\Priya\Delete'
+ filePattern: '*.*'
 
 steps:
 - checkout: self
@@ -14,5 +14,5 @@ steps:
   inputs:
     targetType: 'filePath'
     filePath: '$(System.DefaultWorkingDirectory)/Deletefiles.ps1'
-    #arguments: '-targetDirectory $(targetDirectory) -filePattern $(filePattern)'
+    arguments: '-targetDirectory $(targetDirectory) -filePattern $(filePattern)'
     pwsh: true
