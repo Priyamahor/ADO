@@ -1,0 +1,29 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+variables:
+- group: RecycleAppPool
+- name: AppPool
+  value: '$(appPoolName)'
+- name: ServerName
+  value: '$(serverName)'
+- name: credentials ID
+  value: '$(user ID)'
+- name: SecurePassword
+  value: '$(Password)'
+steps:
+#- task: IISWebAppManagementOnMachineGroup@0
+#  inputs:
+#    IISDeploymentType: 'IISApplicationPool'
+#   ActionIISApplicationPool: 'RecycleAppPool'
+#    StartStopRecycleAppPoolName: 'IVR-Services'
+
+- task: PowerShell@2
+  inputs:
+    targetType: filePath
+    filePath: '$(System.DefaultWorkingDirectory)/RecycleAppPool.ps1'
+    arguments: '-serverName $(serverName) -appPoolName $(appPoolName) -username $(username) -password $(password)'
+    pwsh: true
+ 
