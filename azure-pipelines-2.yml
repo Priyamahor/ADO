@@ -4,7 +4,7 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 variables:
- targetDirectory: 'C:\Users\Priya\Downloads\Delete'
+ targetDirectory: 'C:\Users\ASUA\Documents\Delete files'
  filePattern: '*.xlsx'
 steps:
 - checkout: self
